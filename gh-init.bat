@@ -21,10 +21,10 @@ IF NOT "!arg!"=="" GOTO processArgs
 
 :createRepo
 
-rem git init
-rem git add *
-rem git commit -m "automated creation of repo '%name%'"
-rem git branch -M main
+git init
+git add *
+git commit -m "automated creation of repo '%name%'"
+git branch -M main
 echo !privateFlagSet!
 IF !privateFlagSet! == 1 (
 	echo Creating a privvate repo
@@ -33,5 +33,5 @@ IF !privateFlagSet! == 1 (
 	gh repo create %name% --public
 )
 
-rem git remote add origin https://github.com/Terminator15474/%name%.git
-rem git push -u origin main
+git remote add origin https://github.com/Terminator15474/%name%.git
+git push -u origin main
